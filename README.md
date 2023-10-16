@@ -15,3 +15,9 @@ docker build --tag wagonapp .
 4/ run migration
 dans nouveau terminal commande rails avec 
 docker-compose run web bin/rails db:migrate
+
+
+sur linux
+si manque permission :
+rajouter permission sur bin/
+chmod u+x bin/rails
