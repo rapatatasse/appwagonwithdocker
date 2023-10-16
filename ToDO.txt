@@ -1,7 +1,13 @@
+Step1
 créer base Product avrec saffold name/desciption/price/reference
 
 
 Modifier le form pour avoir l'email sur la collection
+Ajouter boostrap
 
+
+Step2
 Ajouter lastname et firstname sur User
+Modifie formulaire pour avoir le NOM Prenom sur formulaire
+
 

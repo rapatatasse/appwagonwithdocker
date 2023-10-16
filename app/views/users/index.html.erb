@@ -1,0 +1,39 @@
+<h1>Users </h1>
+
+<div id="users">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Email</th>
+        <th>Firstname</th>
+        <th>Lastname</th> 
+        <th>Firstname + Last.</th> 
+        <th>Product</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+          <tr id="<%= dom_id user %>">
+            <td><%= user.email %></td>
+            <td><%= user.firstname %></td>
+            <td><%= user.lastname %></td>
+            <td><%= user.full_name %></td>
+            <td>
+              <% user.products.each do |product| %>
+                <li><%=product.name%>
+                  <%= link_to "Show", product %>
+
+                  <%= link_to  product do %>
+                    super bouton edit
+                  <%end%>
+                   <a href="/products/<%=product.id%>">Show</a>
+                   <%= link_to "Edit", edit_product_path(product), class: "btn btn-warning btn-sm" %>
+                </li>
+              <% end %> 
+            </td>
+          </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

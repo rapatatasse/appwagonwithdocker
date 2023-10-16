@@ -40,3 +40,5 @@ executer rails depuis utre terminal
 docker exec -it wagonapp_web_1 sh  
 ./bin/rails generate scaffold Products name:string comment:text price:float user:references
 ./bin/rails db:migrate
+
+./bin/bundle install
