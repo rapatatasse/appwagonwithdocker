@@ -1,2 +1,12 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+---
+<%= @userconnectmail    %>
+<% if @toto == 1 %>
+    <%= "oui"%>
+<% else %>
+    <%= "non"%>
+<% end %>
+
+---
+<%=current_user.remember_created_at%>

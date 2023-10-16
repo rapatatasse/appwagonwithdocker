@@ -1,0 +1,7 @@
+créer base Product avrec saffold name/desciption/price/reference
+
+
+Modifier le form pour avoir l'email sur la collection
+
+Ajouter lastname et firstname sur User
+
