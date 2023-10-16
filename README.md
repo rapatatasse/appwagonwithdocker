@@ -41,4 +41,11 @@ docker exec -it wagonapp_web_1 sh
 ./bin/rails generate scaffold Products name:string comment:text price:float user:references
 ./bin/rails db:migrate
 
+
+mise a jour desd gems
+./bin/bundle install
+
+puis relancer le build
+docker compose run --rm web bundle update
+docker compose up --build
 ./bin/bundle install
