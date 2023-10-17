@@ -1,7 +1,7 @@
 
 <h1>Products <%= link_to "New product", new_product_path, class: "btn btn-success" %></h1>
 <div class="d-flex justify-content-center">
-  <%= button_to 'Augmenter les prix +20%', augmenter_prix_products_path, method: :post, class: 'btn btn-primary' %>
+  <%= render "searchbarproducts" %>
   
 </div>
 <div id="products">
@@ -10,7 +10,9 @@
       <tr>
         <th>Name</th>
         <th>Comment</th>
-        <th>Price
+        <th class="d-flex">Price
+          <%= button_to '+20%', augmenter_prix_products_path, method: :post, class: 'btn btn-primary m-3' %>
+  
         </th>
         <th>User</th>
         <th>Actions</th>
