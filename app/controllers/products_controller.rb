@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
 
   # GET /products or /products.json
   def index
-    @products = Product.all
+    @products = Product.all.order(:name)
     
   end
 
@@ -39,16 +39,14 @@ class ProductsController < ApplicationController
 
   # PATCH/PUT /products/1 or /products/1.json
   def update
-    respond_to do |format|
+    
       if @product.update(product_params)
-        format.html { redirect_to product_url(@product), notice: "Product was successfully updated." }
-        format.json { render :show, status: :ok, location: @product }
+        redirect_to products_url, notice: "Product was successfully updated." 
       else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
+        render :edit, status: :unprocessable_entity 
       end
     end
-  end
+ 
 
   # DELETE /products/1 or /products/1.json
   def destroy
@@ -58,6 +56,25 @@ class ProductsController < ApplicationController
       format.html { redirect_to products_url, notice: "Product was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  #fonction qui ajoute 20% a tout les prix des produits
+  def augmenter_prix
+    @products = Product.all
+=begin     
+    @products.each do |product|
+      product.price = (product.price * 1.2).round(2)
+      product.save
+    end 
+=end
+    #ou 
+
+    Product.all.map do |product|
+      product.update(price: (product.price * 1.2).round(2))
+    end
+
+  
+    redirect_to products_url, notice: "Product was successfully updated."
   end
 
   private
