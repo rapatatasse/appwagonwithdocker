@@ -4,8 +4,19 @@ class ProductsController < ApplicationController
   # GET /products or /products.json
   def index
     @products = Product.all.order(:name)
+ 
     if params[:query].present?
-      @products = @products.where("name ILIKE ?", "%#{params[:query]}%")
+     raise
+      case params[:search][:search_by]
+      when "name"
+        @products = @products.where("name ILIKE ?", "%#{params[:query]}%")
+      when "comment"
+        @products = @products.where("comment ILIKE ?", "%#{params[:query]}%")
+      when "price"
+        @products = @products.where("price = ?", "#{params[:query].to_f}")
+      when "user"
+        @products = @products.joins(:user).where("users.email ILIKE ?", "%#{params[:query]}%")
+      end
     end
   end
 
