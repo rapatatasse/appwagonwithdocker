@@ -6,7 +6,7 @@ class PagesController < ApplicationController
   
     @toto = "titit"
 
-    @userconnectmail = current_user.email
+
 
   end
 end
