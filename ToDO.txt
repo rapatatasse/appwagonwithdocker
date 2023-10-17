@@ -31,9 +31,9 @@ III/ sur controlleurs
 III/1 action sur produit update
     Faire une action en lot aujmenter tout les produits avec une marge définie avec methode différentes
     Faire un bouton sur chaque produit pour augmenter son prix indépendemente en utilisant update
-
-Step 5 Search barre 
+III/2 search
 Dans index product faire search barre
++ ajouter deux bouton pour changer de colonne de rechere name/description/price
 
 
 step5
