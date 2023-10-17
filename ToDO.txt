@@ -1,27 +1,36 @@
-Step1
-créer base Product avrec saffold name/desciption/price/reference
+I/ Iere migration
+    aide : https://sites.google.com/view/tpass-bibli/g%C3%A9n%C3%A9rateur-de-code-ruby-on-rails?authuser=2
+I.1 Migrer
+créer base "Product" avrec saffold name/desciption/price/reference/user
+rails generate scaffold Products name:string comment:text price:float user:references           --no-stylesheets			
 
-
-Modifier le form pour avoir l'email sur la collection
+I.2 modifier form
+Modifier le form pour avoir l'email de l'user sur la collection
 Ajouter boostrap
 
-
-Step2
+I.3 Ajouter sur db User
 Ajouter lastname et firstname sur User
 Modifie formulaire pour avoir le NOM Prenom sur formulaire
 
-Step3
-modifie rdevelopment.rb pour avoir le terminal dans le conteneur
+II. Amélioraiyon diverse
+II.1 Si travail sur docker modifications fichier pour retrouver terminal
+modifie "development.rb" pour avoir le terminal dans le conteneur
 step pgadmin
+
+II.2 stylesheets
+Ajouter boostrap  
+
 utiliser pg admin pour voir votre base de donné
-installer mapper base de donnée
+
 gem "rails-erd" #https://voormedia.github.io/rails-erd/install.html pour créer une vue de diagramme de la base de données commande "% rake erd"
 
 
 Step4
 Faire une action en lot aujmenter tout les produits avec une marge définie
 
-Step 5 faire une search barre
+Step 5 Search barre 
+Dans index product faire search barre
+
 
 step5
 sur un index user modifie le nom d'un produit inclure un form pour le name dans chaque produit
