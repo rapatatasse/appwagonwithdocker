@@ -21,3 +21,31 @@ sur linux
 si manque permission :
 rajouter permission sur bin/
 chmod u+x bin/rails
+
+sinon telechager l'image en local 
+créer l'image en Local
+docker save couchbase > couchbase.tar
+et partage rl'image
+remonter l'image en local
+docker load < couchbase.tar.xz
+
+Puis dans docker-compose
+changer     build: . en image "et nom de l'image"
+
+
+   
+
+
+executer rails depuis utre terminal
+docker exec -it wagonapp_web_1 sh  
+./bin/rails generate scaffold Products name:string comment:text price:float user:references
+./bin/rails db:migrate
+
+
+mise a jour desd gems
+./bin/bundle install
+
+puis relancer le build
+docker compose run --rm web bundle update
+docker compose up --build
+./bin/bundle install

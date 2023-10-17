@@ -1,0 +1,33 @@
+Step1
+créer base Product avrec saffold name/desciption/price/reference
+
+
+Modifier le form pour avoir l'email sur la collection
+Ajouter boostrap
+
+
+Step2
+Ajouter lastname et firstname sur User
+Modifie formulaire pour avoir le NOM Prenom sur formulaire
+
+Step3
+modifie rdevelopment.rb pour avoir le terminal dans le conteneur
+step pgadmin
+utiliser pg admin pour voir votre base de donné
+installer mapper base de donnée
+gem "rails-erd" #https://voormedia.github.io/rails-erd/install.html pour créer une vue de diagramme de la base de données commande "% rake erd"
+
+
+Step4
+Faire une action en lot aujmenter tout les produits avec une marge définie
+
+Step 5 faire une search barre
+
+step5
+sur un index user modifie le nom d'un produit inclure un form pour le name dans chaque produit
+Step 6
+gestion des rollback page apres modification
+
+Step7
+créer une modal boostrap pour edit dans l'index
+

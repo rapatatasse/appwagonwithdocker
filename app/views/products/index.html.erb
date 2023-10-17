@@ -1,0 +1,21 @@
+
+<h1>Products <%= link_to "New product", new_product_path, class: "btn btn-success" %></h1>
+
+<div id="products">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Comment</th>
+        <th>Price</th>
+        <th>User</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @products.each do |product| %>
+        <%= render product%>
+      <% end %>
+    </tbody>
+  </table>
+</div>
