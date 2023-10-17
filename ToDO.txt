@@ -23,10 +23,14 @@ Ajouter boostrap
 utiliser pg admin pour voir votre base de donné
 
 gem "rails-erd" #https://voormedia.github.io/rails-erd/install.html pour créer une vue de diagramme de la base de données commande "% rake erd"
+    installer  : sudo apt-get install graphviz
+    sur docker : apk add graphviz
+    pour generer le fichier pdf :  ./bin/bundle exec erd
 
-
-Step4
-Faire une action en lot aujmenter tout les produits avec une marge définie
+III/ sur controlleurs
+III/1 action sur produit update
+    Faire une action en lot aujmenter tout les produits avec une marge définie avec methode différentes
+    Faire un bouton sur chaque produit pour augmenter son prix indépendemente en utilisant update
 
 Step 5 Search barre 
 Dans index product faire search barre

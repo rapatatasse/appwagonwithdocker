@@ -3,7 +3,18 @@
   <tr id="<%= dom_id product %>">
     <td><%= product.name %></td>
     <td><%= product.comment %></td>
-    <td><%= product.price %></td>
+    <td><%= product.price %>
+        <%= simple_form_for(product) do  |f| %>
+            <%= f.error_notification %>
+            <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+            <%= f.hidden_field :price, :value => (product.price * 1.2).round(2) %>
+
+            <%= f.button :submit, "+20%", class: "btn btn-danger" %>
+        <%end%>
+    
+    
+    
+    </td>
     <td><%= product.user.email %></td>
     <td>
       <%= link_to "Show", product, class: "btn btn-primary btn-sm" %>
