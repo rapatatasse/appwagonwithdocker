@@ -4,7 +4,9 @@ class ProductsController < ApplicationController
   # GET /products or /products.json
   def index
     @products = Product.all.order(:name)
-    
+    if params[:query].present?
+      @products = @products.where("name ILIKE ?", "%#{params[:query]}%")
+    end
   end
 
   # GET /products/1 or /products/1.json
@@ -68,12 +70,9 @@ class ProductsController < ApplicationController
     end 
 =end
     #ou 
-
     Product.all.map do |product|
       product.update(price: (product.price * 1.2).round(2))
     end
-
-  
     redirect_to products_url, notice: "Product was successfully updated."
   end
 
