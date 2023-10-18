@@ -1,6 +1,6 @@
 <h1>Users </h1>
 
-<div id="users">
+<div id="users" data-controller="usersindex">
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -8,7 +8,10 @@
         <th>Firstname</th>
         <th>Lastname</th> 
         <th>Firstname + Last.</th> 
-        <th>Product</th>
+        <th>   
+          <button data-action="click->usersindex#hiddenproduct">(-)</button>
+          Product 
+        </th>
        
       </tr>
     </thead>
@@ -21,7 +24,7 @@
             <td><%= user.full_name %></td>
             <td>
               <% user.products.each do |product| %>
-                <li><%=product.name%>
+                <li data-usersindex-target="liproduct"><%=product.name%>
                   <%= link_to "Show", product %>
 
                   <%= link_to  product do %>
@@ -36,4 +39,16 @@
       <% end %>
     </tbody>
   </table>
+</div>
+
+<!--HTML from anywhere-->
+<div data-controller="hello">
+  <input data-hello-target="name" type="text">
+
+  <button data-action="click->hello#greet">
+    Greet
+  </button>
+
+  <span data-hello-target="output">
+  </span>
 </div>

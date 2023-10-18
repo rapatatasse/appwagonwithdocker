@@ -36,6 +36,16 @@ Dans index product faire search barre
 + ajouter deux bouton pour changer de colonne de rechere name/description/price
 
 
+IV / Gestion du CSS
+    Ajouter fichier congig/_colors.scss
+V/ JS
+    Code le form de product 
+    temps que  le name et le comment n'est pas remplie ne pas afficher le bouton
+
+    travailler avec stimulus pour faire la même action
+        https://stimulus.hotwired.dev/
+        https://github.com/hotwired/stimulus-rails
+
 step5
 sur un index user modifie le nom d'un produit inclure un form pour le name dans chaque produit
 Step 6

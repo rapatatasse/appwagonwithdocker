@@ -10,3 +10,14 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+a{
+    cursor: pointer;
+    color: #FFC107 !important;
+    &:hover{
+      color: #FFC107 !important;
+     
+      text-decoration : none;
+
+    }
+  }

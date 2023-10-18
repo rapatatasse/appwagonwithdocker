@@ -37,7 +37,8 @@ changer     build: . en image "et nom de l'image"
 
 
 executer rails depuis utre terminal
-docker exec -it wagonapp_web_1 sh  
+ docker exec -it wagonapp_web_1 sh 
+ docker exec -it idducontener sh 
 ./bin/rails generate scaffold Products name:string comment:text price:float user:references
 ./bin/rails db:migrate
 

@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
     @products = Product.all.order(:name)
  
     if params[:query].present?
-     raise
+     
       case params[:search][:search_by]
       when "name"
         @products = @products.where("name ILIKE ?", "%#{params[:query]}%")

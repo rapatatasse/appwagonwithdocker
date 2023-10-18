@@ -10,12 +10,35 @@
 
     <%= f.association :user, :collection => @users,
                :label_method => :email,
-               :label => "Utilisateur"
-               
+               :label => "Utilisateur",
+               selected: true
                 %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-actions" id="divsubmit">
+    <%= f.button :submit, class: " btn-success" %>
   </div>
 <% end %>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Récupérez les éléments HTML pour les champs "name", "comment" et le bouton de soumission
+      var nameField = document.getElementById('product_name');
+      var commentField = document.getElementById('product_comment');
+      var submitButton = document.getElementById('divsubmit');
+      console.log (submitButton)      // Ajoutez un gestionnaire d'événement "input" aux champs "name" et "comment"
+      submitButton.style.display = "none";
+      nameField.addEventListener('input', toggleSubmitButton);
+      commentField.addEventListener('input', toggleSubmitButton);
+      // Fonction pour activer ou désactiver le bouton de soumission
+      function toggleSubmitButton() {
+        if (nameField.value.trim() !== '' && commentField.value.trim() !== '') {
+          console.log ("fonction input validation") 
+          submitButton.style.display = "block";
+        } else {
+          console.log ("fonction input else") 
+          submitButton.style.display = "none";
+        }
+      }
+    });
+
+</script>
